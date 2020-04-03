@@ -1,0 +1,23 @@
+language: node_js
+
+notifications:
+  email: false
+
+node_js:
+  - "12.13.1"
+
+install: npm install
+
+jobs:
+  include:
+    - stage: Tests
+      if: |
+        branch = develop AND \
+        tag IS blank AND \
+        commit_message !~ /(no-deploy|wip)/
+      script: 
+        - npm run lint
+
+cache:
+  directories:
+    - node_modules

@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  retyp-front:
+    container_name: retyp-front
+    hostname: retyp-front
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: retyp-front:latest
+    restart: unless-stopped
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    network_mode: host
+    command: npm run dev
