@@ -40,7 +40,7 @@ export default {
   head () {
     return {
       bodyAttrs: {
-        class: 'bg-gray-900 antialiased'
+        class: 'bg-gray-800 antialiased'
       }
     }
   }
