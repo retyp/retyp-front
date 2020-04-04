@@ -1,0 +1,96 @@
+<template>
+  <div class="flex items-center justify-between h-16 md:h-20 px-3 md:px-6 shadow">
+    <!--
+    |--------------------------------------------------------------------------
+    | Save (paste) button
+    |--------------------------------------------------------------------------
+    -->
+    <div v-if="showSave" class="mr-3 md:mr-6">
+      <button
+        class="bg-indigo-500 w-8 md:w-24 py-1 rounded-md shadow text-gray-100 text-sm md:text-lg font-bold"
+        @click="savePaste"
+      >
+        <i class="fas fa-save" />
+        <span class="hidden md:inline pl-2">Save</span>
+      </button>
+    </div>
+
+    <!--
+    |--------------------------------------------------------------------------
+    | Paste name
+    |--------------------------------------------------------------------------
+    -->
+    <div v-if="showName" class="w-full mr-3 md:mr-6">
+      <p class="bg-gray-800 text-gray-100 font-bold text-xl md:text-3xl outline-none w-full">
+        {{ paste.name }}
+      </p>
+    </div>
+
+    <!--
+    |--------------------------------------------------------------------------
+    | Paste name input
+    |--------------------------------------------------------------------------
+    -->
+    <div v-if="showNameInput" class="w-full mr-3 md:mr-6">
+      <input
+        v-model="paste.name"
+        type="text"
+        placeholder="Untitled (click to rename)"
+        class="bg-gray-800 text-gray-100 font-bold text-xl md:text-3xl outline-none w-full"
+      >
+    </div>
+
+    <!--
+    |--------------------------------------------------------------------------
+    | Toggle right sidebar
+    |--------------------------------------------------------------------------
+    -->
+    <div
+      v-if="showToggleRightSidebar"
+      class="z-50 px-2 md:px-3 pt-1 md:pt-2 pb-px md:pb-1 transition duration-150 bg-gray-700 hover:bg-gray-900 rounded-md shadow focus:outline-none focus:bg-gray-700"
+      @click="$store.dispatch('layout/toggleRightSidebar')"
+    >
+      <i class="fas fa-bars text-md md:text-2xl text-gray-500" />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    // Options
+    showSave: {
+      type: Boolean,
+      default: false
+    },
+    showName: {
+      type: Boolean,
+      default: false
+    },
+    showNameInput: {
+      type: Boolean,
+      default: false
+    },
+    showToggleRightSidebar: {
+      type: Boolean,
+      default: false
+    },
+    // Data
+    paste: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  methods: {
+    savePaste () {
+      this.$axios.post('/pastes', {
+        name: this.paste.name,
+        content: this.paste.content
+      })
+        .then((res) => {
+          this.$router.push(`/${res.data.hash}`)
+        })
+    }
+  }
+}
+</script>

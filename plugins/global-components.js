@@ -7,6 +7,8 @@ import LeftSidebarItem from '@/components/layout/left-sidebar/LeftSidebarItem'
 
 import RightSidebar from '@/components/layout/right-sidebar/RightSidebar'
 
+import PasteHeader from '@/components/layout/PasteHeader'
+
 // Brand components
 Vue.component('SquareLogo', SquareLogo)
 
@@ -15,3 +17,5 @@ Vue.component('LeftSidebar', LeftSidebar)
 Vue.component('LeftSidebarItem', LeftSidebarItem)
 
 Vue.component('RightSidebar', RightSidebar)
+
+Vue.component('PasteHeader', PasteHeader)

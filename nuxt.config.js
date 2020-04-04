@@ -24,11 +24,13 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/axios.js', ssr: true },
     { src: '~/plugins/global-components.js', ssr: true },
     { src: '~/plugins/highlightjs.js', ssr: true }
   ],
