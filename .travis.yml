@@ -17,6 +17,7 @@ jobs:
         commit_message !~ /(no-deploy|wip)/
       script: 
         - npm run lint
+        - npm run test:e2e
 
 cache:
   directories:
