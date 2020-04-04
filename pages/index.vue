@@ -15,7 +15,7 @@
       <div class="mr-3 md:mr-6">
         <button
           @click="savePaste"
-          class="bg-indigo-500 w-8 md:w-24 py-1 rounded shadow text-gray-100 text-sm md:text-lg font-bold"
+          class="bg-indigo-500 w-8 md:w-24 py-1 rounded-md shadow text-gray-100 text-sm md:text-lg font-bold"
         >
           <i class="fas fa-save" />
           <span class="hidden md:inline pl-2">Save</span>
@@ -35,9 +35,9 @@
       <!-- Toggle right sidebar -->
       <div
         @click="$store.dispatch('layout/toggleRightSidebar')"
-        class="px-3 pt-2 pb-1 transition duration-150 bg-gray-700 hover:bg-gray-900 rounded-md shadow focus:outline-none"
+        class="z-50 px-2 md:px-3 pt-1 md:pt-2 pb-px md:pb-1 transition duration-150 bg-gray-700 hover:bg-gray-900 rounded-md shadow focus:outline-none focus:bg-gray-700"
       >
-        <i class="fas fa-bars text-2xl text-gray-500" />
+        <i class="fas fa-bars text-md md:text-2xl text-gray-500" />
       </div>
     </div>
 
