@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-between h-10 px-6 text-gray-700">
+  <div class="flex justify-between items-center h-10 px-6 text-gray-700 text-xs md:text-base">
     <div>
-      <p>
+      <p class="align-text-bottom">
         © {{ new Date().getFullYear() }}
         <a
           class="transition duration-300 hover:text-gray-500 font-extrabold"
@@ -24,7 +24,7 @@
         href="https://github.com/retyp"
         target="_blank"
       >
-        <i class="fab fa-github text-xl" />
+        <i class="fab fa-github text-lg md:text-xl" />
       </a>
     </div>
   </div>
