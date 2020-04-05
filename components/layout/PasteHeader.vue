@@ -7,7 +7,8 @@
     -->
     <div v-if="showSave" class="md:mr-6">
       <button
-        class="bg-indigo-500 rounded-md shadow-md text-gray-100 text-xl md:text-2xl font-bold fixed bottom-0 right-0 md:bottom-auto md:right-auto md:static px-3 py-1 mb-3 mr-3 md:mb-0 md:mr-0"
+        class="bg-indigo-500 hover:bg-indigo-600 duration-200 transform hover:scale-105 rounded-md shadow-md text-gray-100 font-bold text-xl md:text-2xl
+        fixed bottom-0 right-0 md:bottom-auto md:right-auto md:static px-3 py-1 mb-3 mr-3 md:mb-0 md:mr-0"
         @click="savePaste"
       >
         <i class="fas fa-save" />

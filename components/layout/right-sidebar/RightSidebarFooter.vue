@@ -1,17 +1,16 @@
 <template>
-  <div class="flex justify-between items-center h-10 px-6 text-gray-700 text-xs md:text-base">
+  <div class="flex justify-between items-center h-10 px-6 text-gray-700 text-xs md:text-sm">
     <div>
-      <p class="align-text-bottom">
-        © {{ new Date().getFullYear() }}
-        <a
-          class="transition duration-300 hover:text-gray-500 font-extrabold"
-          href="https://arthurdufour.com"
-          target="_blank"
-        >Arthur Dufour</a>
-      </p>
+      © {{ new Date().getFullYear() }}
+      <a
+        class="transition duration-300 hover:text-gray-500 font-extrabold"
+        href="https://arthurdufour.com"
+        target="_blank"
+      >Arthur Dufour</a>
     </div>
     <div>
       <a
+        my-auto
         class="transition duration-300 hover:text-gray-500"
         href="https://github.com/retyp"
         target="_blank"
@@ -24,7 +23,7 @@
         href="https://github.com/retyp"
         target="_blank"
       >
-        <i class="fab fa-github text-lg md:text-xl" />
+        <i class="fab fa-github" />
       </a>
     </div>
   </div>
