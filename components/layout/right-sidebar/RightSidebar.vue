@@ -1,7 +1,13 @@
 <template>
   <transition name="slide-fade">
     <div v-if="open" class="flex-none absolute top-0 right-0 w-screen h-screen bg-gray-900 shadow md:static md:right-0 md:w-108 xl:w-132">
-      <div />
+      <div class="flex flex-col min-h-full">
+        <!-- main content -->
+        <div class="flex-grow" />
+
+        <!-- footer -->
+        <right-sidebar-footer />
+      </div>
     </div>
   </transition>
 </template>

@@ -6,6 +6,7 @@ import LeftSidebar from '@/components/layout/left-sidebar/LeftSidebar'
 import LeftSidebarItem from '@/components/layout/left-sidebar/LeftSidebarItem'
 
 import RightSidebar from '@/components/layout/right-sidebar/RightSidebar'
+import RightSidebarFooter from '@/components/layout/right-sidebar/RightSidebarFooter'
 
 import PasteHeader from '@/components/layout/PasteHeader'
 
@@ -17,5 +18,6 @@ Vue.component('LeftSidebar', LeftSidebar)
 Vue.component('LeftSidebarItem', LeftSidebarItem)
 
 Vue.component('RightSidebar', RightSidebar)
+Vue.component('RightSidebarFooter', RightSidebarFooter)
 
 Vue.component('PasteHeader', PasteHeader)
