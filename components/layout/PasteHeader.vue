@@ -47,10 +47,14 @@
     -->
     <div
       v-if="showToggleRightSidebar"
-      class="z-50 px-2 md:px-3 pt-1 md:pt-2 pb-px md:pb-1 transition duration-150 bg-gray-700 hover:bg-gray-900 rounded-md shadow focus:outline-none focus:bg-gray-700"
-      @click="$store.dispatch('layout/toggleRightSidebar')"
+      class="py-3 px-3 -mr-6 bg-gray-900 rounded-l-md"
     >
-      <i class="fas fa-bars text-md md:text-2xl text-gray-500" />
+      <div
+        class="z-50 px-2 md:px-3 pt-1 md:pt-2 pb-px md:pb-1 transition duration-150 bg-gray-700 hover:bg-gray-900 rounded-md shadow focus:outline-none focus:bg-gray-700"
+        @click="$store.dispatch('layout/toggleRightSidebar')"
+      >
+        <i class="fas fa-bars text-md md:text-2xl text-gray-500" />
+      </div>
     </div>
   </div>
 </template>
