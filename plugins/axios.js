@@ -1,10 +1,10 @@
-export default function ({ $axios }) {
+export default function ({ $axios, error }) {
   $axios.setBaseURL(process.env.BASE_URL)
 
-  // $axios.onError((error) => {
-  //   const code = parseInt(error.response && error.response.status)
-  //   if (code === 400) {
-  //     redirect('/400')
-  //   }
-  // })
+  $axios.onError((err) => {
+    const code = parseInt(err.response && err.response.status)
+    if (code === 404) {
+      return error({ statusCode: 404 })
+    }
+  })
 }
