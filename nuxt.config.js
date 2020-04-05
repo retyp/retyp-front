@@ -24,13 +24,15 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    '~/assets/css/toasted.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     { src: '~/plugins/axios.js', ssr: true },
+    { src: '~/plugins/global-toasts', ssr: false },
     { src: '~/plugins/global-components.js', ssr: true },
     { src: '~/plugins/highlightjs.js', ssr: true }
   ],
@@ -49,9 +51,12 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // Doc: https://pwa.nuxtjs.org/
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/toast
+    '@nuxtjs/toast'
   ],
   /*
   ** Axios module configuration
