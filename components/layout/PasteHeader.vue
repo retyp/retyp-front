@@ -47,7 +47,7 @@
     -->
     <div
       v-if="showToggleRightSidebar"
-      class="z-50 py-2 md:py-3 px-2 md:px-3 -mr-3 md:-mr-6 bg-gray-700 md:bg-gray-900 rounded-l-md"
+      class="z-50 py-2 md:py-3 px-2 md:px-3 -mr-3 md:-mr-6 bg-gray-700 md:bg-gray-900 rounded-l-lg"
     >
       <div
         class="px-2 md:px-3 pt-1 md:pt-2 pb-px md:pb-1 transition duration-150 bg-gray-900 md:bg-gray-700 hover:bg-gray-900 rounded-md shadow focus:outline-none focus:bg-gray-700"
