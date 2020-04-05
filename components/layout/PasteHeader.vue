@@ -87,10 +87,7 @@ export default {
   },
   methods: {
     savePaste () {
-      this.$axios.post('/pastes', {
-        name: this.paste.name,
-        content: this.paste.content
-      })
+      this.$axios.post('/pastes', this.paste)
         .then((res) => {
           this.$router.push(`/${res.data.hash}`)
         })

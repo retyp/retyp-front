@@ -31,10 +31,7 @@
 export default {
   data () {
     return {
-      paste: {
-        name: '',
-        content: ''
-      }
+      paste: {}
     }
   }
 }
