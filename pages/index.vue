@@ -19,12 +19,13 @@
     |--------------------------------------------------------------------------
     -->
     <div class="px-2 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full">
-      <textarea
-        v-model="paste.content"
-        maxlength="10000"
-        placeholder="Write or paste your code here..."
-        class="text-gray-100 bg-gray-800 resize-none outline-none h-full w-full overflow-auto text-sm md:text-base"
-      />
+      <client-only>
+        <prism-editor
+          :code.sync="paste.content"
+          line-numbers
+          language="js"
+        />
+      </client-only>
     </div>
   </div>
 </template>
