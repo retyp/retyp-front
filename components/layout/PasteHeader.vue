@@ -19,7 +19,7 @@
       <button
         class="bg-indigo-500 hover:bg-indigo-600 duration-200 transform hover:scale-105 rounded-md shadow-md text-gray-100 font-bold text-xl md:text-2xl
         fixed bottom-0 right-0 md:bottom-auto md:right-auto md:static px-3 py-1 mb-3 mr-3 md:mb-0 md:mr-0"
-        @click="savePaste"
+        @click="$emit('save-paste')"
       >
         <i class="fas fa-save" />
       </button>
@@ -97,15 +97,6 @@ export default {
     paste: {
       type: Object,
       default: () => {}
-    }
-  },
-  methods: {
-    savePaste () {
-      this.$axios.post('/pastes', this.paste)
-        .then((res) => {
-          this.$toast.global.success({ message: 'Paste successfully created!' })
-          this.$router.push(`/${res.data.hash}`)
-        })
     }
   }
 }

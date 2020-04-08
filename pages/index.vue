@@ -9,7 +9,8 @@
       show-save
       show-name-input
       show-toggle-right-sidebar
-      :paste="paste"
+      :paste.sync="paste"
+      @save-paste="savePaste"
     />
 
     <!--
@@ -20,8 +21,9 @@
     <div class="px-2 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full">
       <textarea
         v-model="paste.content"
+        maxlength="10000"
         placeholder="Write or paste your code here..."
-        class="text-gray-600 bg-gray-800 resize-none outline-none h-full w-full overflow-auto text-sm md:text-base"
+        class="text-gray-100 bg-gray-800 resize-none outline-none h-full w-full overflow-auto text-sm md:text-base"
       />
     </div>
   </div>
@@ -32,6 +34,22 @@ export default {
   data () {
     return {
       paste: {}
+    }
+  },
+  methods: {
+    savePaste () {
+      if (!this.paste.content) {
+        return this.$toast.global.error({ message: 'Your paste cannot be empty.' })
+      }
+
+      this.$axios.post('/pastes', this.paste)
+        .then((res) => {
+          this.$toast.global.success({ message: 'Paste successfully created!' })
+          this.$router.push(`/${res.data.hash}`)
+        })
+        .catch((err) => {
+          this.$toast.global.error({ message: err.response.data.errors[0].detail })
+        })
     }
   }
 }
