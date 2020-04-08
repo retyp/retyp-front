@@ -18,32 +18,40 @@
     |--------------------------------------------------------------------------
     -->
     <div class="px-2 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full">
-      <div v-if="loading">
-        <loading-placeholder class="m-1 mb-8 h-4 w-40 md:w-84" />
+      <client-only>
+        <div slot="placeholder">
+          <loading-placeholder class="m-1 mb-8 h-4 w-40 md:w-84" />
 
-        <loading-placeholder class="m-1 mb-3 h-4 w-32 md:w-64  lg:w-96" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-56 md:w-108 lg:w-145" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-48 md:w-96  lg:w-132" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-56 md:w-108 lg:w-145" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-40 md:w-84  lg:w-120" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-32 md:w-64  lg:w-96" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-48 md:w-96  lg:w-132" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-48 md:w-96  lg:w-132" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-40 md:w-84  lg:w-120" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-32 md:w-64  lg:w-96" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-40 md:w-84  lg:w-120" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-20 md:w-40  lg:w-64" />
-        <loading-placeholder class="m-1 mb-3 h-4 w-12 md:w-32  lg:w-40" />
-      </div>
+          <loading-placeholder class="m-1 mb-3 h-4 w-32 md:w-64  lg:w-96" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-56 md:w-108 lg:w-145" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-48 md:w-96  lg:w-132" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-56 md:w-108 lg:w-145" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-40 md:w-84  lg:w-120" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-32 md:w-64  lg:w-96" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-48 md:w-96  lg:w-132" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-48 md:w-96  lg:w-132" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-40 md:w-84  lg:w-120" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-32 md:w-64  lg:w-96" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-40 md:w-84  lg:w-120" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-20 md:w-40  lg:w-64" />
+          <loading-placeholder class="m-1 mb-3 h-4 w-12 md:w-32  lg:w-40" />
+        </div>
 
-      <highlight-code
-        v-if="!loading"
-        :code="paste.content"
-        auto
-        class="text-gray-600 bg-gray-800 resize-none outline-none h-full w-full overflow-auto text-sm md:text-base"
-      />
+        <prism-editor
+          v-show="!loading"
+          :code="paste.content"
+          readonly
+          line-numbers
+          language="js"
+        />
+      </client-only>
     </div>
 
+    <!--
+    |--------------------------------------------------------------------------
+    | Error modal
+    |--------------------------------------------------------------------------
+    -->
     <modal :showing="showErrorModal">
       <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
         <div class="sm:flex sm:items-start">

@@ -24,7 +24,9 @@
     "@nuxtjs/toast": "^3.3.0",
     "highlight.js": "^9.18.1",
     "nuxt": "^2.12.2",
-    "vue-highlight.js": "^3.1.0"
+    "prismjs": "^1.20.0",
+    "vue-highlight.js": "^3.1.0",
+    "vue-prism-editor": "^0.5.1"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
