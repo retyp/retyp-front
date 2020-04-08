@@ -1,6 +1,11 @@
-/* Custom hljs background */
-.hljs {
-  background: #2d3748 !important;
+/* Custom prismjs style */
+.prism-editor-wrapper {
+  height: 100% !important;
+  background: #2D3748 !important;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: #2D3748 !important;
 }
 
 /* Custom scrollbar */
