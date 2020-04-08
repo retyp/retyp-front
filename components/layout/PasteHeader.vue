@@ -2,10 +2,20 @@
   <div class="flex items-center justify-between h-16 md:h-20 px-3 md:px-6 shadow">
     <!--
     |--------------------------------------------------------------------------
+    | Loading placeholder
+    |--------------------------------------------------------------------------
+    -->
+    <loading-placeholder
+      v-if="loading"
+      class="h-6 md:h-8 md:w-56 w-32 sm:w-56 lg:w-96 md:px-6"
+    />
+
+    <!--
+    |--------------------------------------------------------------------------
     | Save (paste) button
     |--------------------------------------------------------------------------
     -->
-    <div v-if="showSave" class="md:mr-6">
+    <div v-if="showSave && !loading" class="md:mr-6">
       <button
         class="bg-indigo-500 hover:bg-indigo-600 duration-200 transform hover:scale-105 rounded-md shadow-md text-gray-100 font-bold text-xl md:text-2xl
         fixed bottom-0 right-0 md:bottom-auto md:right-auto md:static px-3 py-1 mb-3 mr-3 md:mb-0 md:mr-0"
@@ -20,7 +30,7 @@
     | Paste name
     |--------------------------------------------------------------------------
     -->
-    <div v-if="showName" class="w-full mr-3 md:mr-6">
+    <div v-if="showName && !loading" class="w-full mr-3 md:mr-6">
       <p class="bg-gray-800 text-gray-100 font-bold text-xl md:text-3xl outline-none w-full">
         {{ paste.name }}
       </p>
@@ -31,7 +41,7 @@
     | Paste name input
     |--------------------------------------------------------------------------
     -->
-    <div v-if="showNameInput" class="w-full mr-3 md:mr-6">
+    <div v-if="showNameInput && !loading" class="w-full mr-3 md:mr-6">
       <input
         v-model="paste.name"
         type="text"
@@ -62,6 +72,10 @@
 <script>
 export default {
   props: {
+    loading: {
+      type: Boolean,
+      default: false
+    },
     // Options
     showSave: {
       type: Boolean,
