@@ -1,10 +1,9 @@
-export default function ({ $axios, error }) {
+export default function ({ app, $axios, error }) {
   $axios.setBaseURL(process.env.BASE_URL)
 
   $axios.onError((err) => {
-    const code = parseInt(err.response && err.response.status)
-    if (code === 404) {
-      return error({ statusCode: 404 })
+    if (!err.response) {
+      app.$toast.global.error({ message: "Couldn't reach the API... Is internet ok?" })
     }
   })
 }
