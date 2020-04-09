@@ -3,13 +3,12 @@
     <slot />
 
     <div
-      class="tooltip-text text-white text-xs rounded py-2 px-2 shadow-md"
-      :class="[classes, { 'bg-indigo-500': !active, 'bg-gray-700': active }]"
+      class="tooltip-text bg-indigo-500 text-white text-xs rounded py-2 px-2 shadow-md"
+      :class="classes"
     >
       {{ text }}
       <svg
-        class="absolute h-4 -ml-6 -mt-4 transform rotate-90"
-        :class="{ 'text-indigo-500': !active, 'text-gray-700': active }"
+        class="absolute h-4 -ml-6 -mt-4 transform rotate-90 text-indigo-500"
         x="0px"
         y="0px"
         viewBox="0 0 255 255"
