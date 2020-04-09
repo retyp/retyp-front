@@ -30,8 +30,8 @@
     | Paste name
     |--------------------------------------------------------------------------
     -->
-    <div v-if="showName && !loading" class="w-full mr-3 md:mr-6">
-      <p class="bg-gray-800 text-gray-100 font-bold text-xl md:text-3xl outline-none w-full">
+    <div v-if="showName && !loading" class="w-auto mr-3 md:mr-6 overflow-x-auto">
+      <p class="bg-gray-800 text-gray-100 font-bold text-xl md:text-3xl outline-none whitespace-no-wrap overflow-x-auto">
         {{ paste.name }}
       </p>
     </div>
@@ -101,3 +101,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::-webkit-scrollbar {
+  width: 3px !important;
+  height: 3px !important;
+}
+::-webkit-scrollbar-track {
+  margin: 0px;
+}
+</style>

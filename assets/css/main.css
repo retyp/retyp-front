@@ -1,20 +1,23 @@
-/* Custom prismjs style */
-.prism-editor-wrapper {
-  height: 100% !important;
-  background: #2D3748 !important;
-}
-
+/* ============================================================== */
+/* == Custom prismjs style ====================================== */
+/* ============================================================== */
+.prism-editor-wrapper,
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: #2D3748 !important;
+  background: #2D3748 !important
+}
+.prism-editor__line-numbers {
+  height: auto !important
 }
 
-/* Custom scrollbar */
+/* ============================================================== */
+/* == Custom scrollbar ========================================== */
+/* ============================================================== */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  margin-right: 8px;
+  margin-right: 6px;
   margin-bottom: 20px;
   border-radius: 25px;
   background: #4A5568;
@@ -23,6 +26,10 @@
   border-radius: 25px;
   background: #1A202C;
 }
+
+/* ============================================================== */
+/* == Custom transitions ======================================== */
+/* ============================================================== */
 
 /* Page transition */
 .page-enter-active,
