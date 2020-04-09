@@ -31,6 +31,7 @@ Retyp's front is built with the following tools :
 | ---------------- | ------- | ------------------------------------------------------------------------------------------------ |
 | [Nuxt.js]        | 2.11.0  | The Progressive Vue.js Framework.                                                                |
 | [TailwindCSS]    | 1.1.3   | A utility-first CSS framework for rapid UI development.                                          |
+| [Prism.js]       | 1.20.0  | Prism is a lightweight, robust, elegant syntax highlighting library.                             |
 
 **(Non-exhaustive list, only the main libraries & tools are listed)*
 
@@ -47,4 +48,5 @@ To start the application you can:
 
 [Nuxt.js]: https://nuxtjs.org/
 [TailwindCSS]: https://tailwindcss.com/
+[Prism.js]: https://prismjs.com/
 
