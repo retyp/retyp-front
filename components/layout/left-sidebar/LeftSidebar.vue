@@ -7,13 +7,23 @@
 
       <div class="">
         <div class="text-xl md:text-2xl text-center">
-          <left-sidebar-item icon="fa fa-pen" active />
+          <tooltip text="Create new paste" :active="route === 'index'">
+            <router-link to="/" :disabled="route === 'index'">
+              <left-sidebar-item icon="fa fa-pen" :active="route === 'index'" />
+            </router-link>
+          </tooltip>
 
-          <left-sidebar-item icon="fa fa-clone" />
+          <tooltip text="Duplicate this paste">
+            <left-sidebar-item icon="fa fa-clone" />
+          </tooltip>
 
-          <left-sidebar-item icon="fa fa-share-alt" />
+          <tooltip text="Share this paste">
+            <left-sidebar-item icon="fa fa-share-alt" />
+          </tooltip>
 
-          <left-sidebar-item icon="fa fa-trash-alt" />
+          <tooltip text="Delete this paste">
+            <left-sidebar-item icon="fa fa-trash-alt" />
+          </tooltip>
         </div>
       </div>
     </div>
@@ -22,6 +32,10 @@
 
 <script>
 export default {
-
+  computed: {
+    route () {
+      return this.$route.name
+    }
+  }
 }
 </script>

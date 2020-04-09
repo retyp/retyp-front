@@ -1,7 +1,7 @@
 <template>
   <div
     :class="active
-      ? 'text-indigo-500 border-indigo-500 border-r-2 md:border-r-4'
+      ? 'text-indigo-500 hover:text-indigo-600 border-indigo-500 border-r-2 md:border-r-4'
       : 'text-gray-800 hover:text-gray-600'"
     class="mt-5 sm:mt-8 px-4 duration-150 cursor-pointer"
   >
