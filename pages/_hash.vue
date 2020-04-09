@@ -7,6 +7,7 @@
     -->
     <paste-header
       :loading="loading"
+      show-viewing
       show-name
       show-toggle-right-sidebar
       :paste="paste"

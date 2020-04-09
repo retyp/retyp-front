@@ -13,6 +13,10 @@
             </router-link>
           </tooltip>
 
+          <tooltip text="View paste" :active="route === 'hash'">
+            <left-sidebar-item :icon="route === 'hash' ? 'fas fa-eye' : 'fas fa-eye-slash'" :active="route === 'hash'" />
+          </tooltip>
+
           <tooltip text="Duplicate this paste">
             <left-sidebar-item icon="fa fa-clone" />
           </tooltip>

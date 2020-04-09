@@ -17,8 +17,8 @@
     -->
     <div v-if="showSave && !loading" class="md:mr-6">
       <button
-        class="bg-indigo-500 hover:bg-indigo-600 duration-200 transform hover:scale-105 rounded-md shadow-md text-gray-100 font-bold text-xl md:text-2xl
-        fixed bottom-0 right-0 md:bottom-auto md:right-auto md:static px-3 py-1 mb-3 mr-3 md:mb-0 md:mr-0"
+        class="bg-indigo-500 hover:bg-indigo-600 duration-200 transform hover:scale-105 rounded-md shadow text-gray-100 font-bold text-xl md:text-2xl
+        fixed bottom-0 right-0 md:bottom-auto md:right-auto md:static px-3 py-1 mb-3 mr-3 md:mb-0 md:mr-0 focus:outline-none"
         @click="$emit('save-paste')"
       >
         <i class="fas fa-save" />
@@ -27,10 +27,21 @@
 
     <!--
     |--------------------------------------------------------------------------
+    | Viewing indicator
+    |--------------------------------------------------------------------------
+    -->
+    <div v-if="showViewing" class="md:mr-6">
+      <button class="hidden md:block px-3 py-1 bg-gray-900 text-gray-700 font-bold text-xl md:text-2xl rounded-md shadow focus:outline-none cursor-not-allowed">
+        <i class="fas fa-lock" />
+      </button>
+    </div>
+
+    <!--
+    |--------------------------------------------------------------------------
     | Paste name
     |--------------------------------------------------------------------------
     -->
-    <div v-if="showName && !loading" class="w-auto mr-3 md:mr-6 overflow-x-auto">
+    <div v-if="showName && !loading" class="w-full mr-3 md:mr-6 overflow-x-auto">
       <p class="bg-gray-800 text-gray-100 font-bold text-xl md:text-3xl outline-none whitespace-no-wrap overflow-x-auto">
         {{ paste.name }}
       </p>
@@ -78,6 +89,10 @@ export default {
     },
     // Options
     showSave: {
+      type: Boolean,
+      default: false
+    },
+    showViewing: {
       type: Boolean,
       default: false
     },
