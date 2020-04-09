@@ -2,9 +2,9 @@ import Vue from 'vue'
 
 import SquareLogo from '@/components/brand/SquareLogo'
 
-import Modal from '@/components/layout/Modal'
+import Modal from '@/components/theme/Modal'
 import Tooltip from '@/components/theme/Tooltip'
-import LoadingPlaceholder from '@/components/layout/LoadingPlaceholder'
+import LoadingPlaceholder from '@/components/theme/LoadingPlaceholder'
 
 import LeftSidebar from '@/components/layout/left-sidebar/LeftSidebar'
 import LeftSidebarItem from '@/components/layout/left-sidebar/LeftSidebarItem'
