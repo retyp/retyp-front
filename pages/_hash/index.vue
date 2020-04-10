@@ -13,12 +13,26 @@
       :paste="paste"
     />
 
-    <!--
-    |--------------------------------------------------------------------------
-    | Paste content
-    |--------------------------------------------------------------------------
-    -->
-    <div class="px-2 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full">
+    <div class="px-2 md:px-6 -mt-20 -mr-145 pt-24 pb-6 md:pb-12 h-full w-full">
+      <!--
+      |--------------------------------------------------------------------------
+      | Paste options
+      |--------------------------------------------------------------------------
+      -->
+      <div class="flex flex-wrap justify-start px-2 pb-1 md:px-4 md:pt-2">
+        <button
+          class="bg-gray-600 rounded shadow-md px-2 py-px mx-1 mb-1 text-gray-100 text-xs md:text-sm transform duration-150 ease-in hover:bg-gray-700 focus:outline-none"
+          @click="$router.push(`/${$route.params.hash}/raw`)"
+        >
+          view raw
+        </button>
+      </div>
+
+      <!--
+      |--------------------------------------------------------------------------
+      | Paste content
+      |--------------------------------------------------------------------------
+      -->
       <client-only>
         <div slot="placeholder">
           <loading-placeholder class="m-1 mb-8 h-4 w-40 md:w-84" />
