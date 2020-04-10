@@ -87,18 +87,24 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
       loading: true,
-      paste: {},
       showErrorModal: false
     }
+  },
+  computed: {
+    ...mapState({
+      paste: state => state.paste.paste
+    })
   },
   mounted () {
     this.$axios.get(`pastes/${this.$route.params.hash}`)
       .then((res) => {
-        this.paste = res.data
+        this.$store.commit('paste/SET_PASTE', res.data)
       })
       .catch(() => {
         this.showErrorModal = true
@@ -106,6 +112,9 @@ export default {
       .finally(() => {
         this.loading = false
       })
+  },
+  beforeDestroy () {
+    this.$store.commit('paste/RESET_PASTE')
   }
 }
 </script>

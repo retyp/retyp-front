@@ -31,11 +31,33 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
       paste: {}
     }
+  },
+  computed: {
+    ...mapState({
+      clone: state => state.paste.clone
+    })
+  },
+  watch: {
+    clone (newVal, oldVal) {
+      if (!newVal) {
+        this.paste = {}
+      }
+    }
+  },
+  beforeMount () {
+    if (this.$store.getters['paste/isCloning']) {
+      this.paste.content = this.clone
+    }
+  },
+  beforeDestroy () {
+    this.$store.commit('paste/RESET_CLONE')
   },
   methods: {
     savePaste () {
