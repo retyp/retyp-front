@@ -25,6 +25,13 @@
       >
         <i class="fab fa-github" />
       </a>
+      <a
+        class="transition duration-300 hover:text-gray-500 pl-3"
+        href="https://discord.gg/jx4rRZ3"
+        target="_blank"
+      >
+        <i class="fab fa-discord" />
+      </a>
     </div>
   </div>
 </template>
