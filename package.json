@@ -22,10 +22,8 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/tailwindcss": "^1.4.0",
     "@nuxtjs/toast": "^3.3.0",
-    "highlight.js": "^9.18.1",
     "nuxt": "^2.12.2",
     "prismjs": "^1.20.0",
-    "vue-highlight.js": "^3.1.0",
     "vue-prism-editor": "^0.5.1"
   },
   "devDependencies": {

@@ -34,7 +34,6 @@ export default {
     { src: '~/plugins/axios.js', ssr: true },
     { src: '~/plugins/global-toasts', ssr: false },
     { src: '~/plugins/global-components.js', ssr: true },
-    { src: '~/plugins/highlightjs.js', ssr: true },
     { src: '~/plugins/prism-editor.js', ssr: false }
   ],
   /*
