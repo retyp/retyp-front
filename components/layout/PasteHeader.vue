@@ -30,7 +30,7 @@
     | Viewing indicator
     |--------------------------------------------------------------------------
     -->
-    <div v-if="showViewing" class="md:mr-6">
+    <div v-if="showViewing && !loading" class="md:mr-6">
       <button class="hidden md:block px-3 py-1 bg-gray-900 text-gray-700 font-bold text-xl md:text-2xl rounded-md shadow focus:outline-none cursor-not-allowed">
         <i class="fas fa-lock" />
       </button>

@@ -22,13 +22,33 @@
       <div class="flex flex-wrap justify-start px-2 md:px-4 md:pb-2">
         <!-- paste language -->
         <!-- <languages-dropdown @update:language="language = $event" /> -->
-        <p class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 rounded-md shadow-sm">
-          {{ paste.language || 'language unknown' }}
-        </p>
+        <div class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 rounded-md shadow-sm">
+          <loading-placeholder v-show="loading" class="h-5 w-16" light />
+          <div v-show="!loading">
+            <i class="fas fa-language mr-1" />
+            <span>{{ paste.language || 'language unknown' }}</span>
+          </div>
+        </div>
+
+        <!-- copy (clipboard) -->
+        <button
+          class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none"
+          @click="copyToClipboard()"
+        >
+          <loading-placeholder v-show="loading" class="h-5 w-16" light />
+          <div v-show="!loading">
+            <i class="fas fa-copy mr-1" />
+            <span>copy</span>
+          </div>
+        </button>
 
         <!-- view raw -->
         <button class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none">
-          <a :href="`/${$route.params.hash}/raw`">view raw</a>
+          <loading-placeholder v-show="loading" class="h-5 w-16" light />
+          <div v-show="!loading">
+            <i class="fas fa-file mr-1" />
+            <a :href="`/${$route.params.hash}/raw`">view raw</a>
+          </div>
         </button>
       </div>
 
@@ -135,6 +155,18 @@ export default {
   },
   beforeDestroy () {
     this.$store.commit('paste/RESET_PASTE')
+  },
+  methods: {
+    copyToClipboard () {
+      if (!this.paste.content) { return }
+
+      const toast = this.$toast.global
+      navigator.clipboard.writeText(this.paste.content).then(function () {
+        toast.success({ message: 'Successfully copied to clipboard! ' })
+      }, function () {
+        toast.error({ message: 'An error occured while copying paste content! ' })
+      })
+    }
   }
 }
 </script>
