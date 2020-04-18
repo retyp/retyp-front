@@ -13,18 +13,22 @@
       :paste="paste"
     />
 
-    <div class="px-2 md:px-6 -mt-20 -mr-145 pt-24 pb-6 md:pb-12 h-full w-full">
+    <div class="px-2 md:px-6 -mt-20 -mr-145 pt-24 pb-6 md:pb-16 h-full w-full">
       <!--
       |--------------------------------------------------------------------------
       | Paste options
       |--------------------------------------------------------------------------
       -->
-      <div class="flex flex-wrap justify-start px-2 pb-1 md:px-4 md:pt-2">
-        <button
-          class="bg-gray-600 rounded shadow-md px-2 py-px mx-1 mb-1 text-gray-100 text-xs md:text-sm transform duration-150 ease-in hover:bg-gray-700 focus:outline-none"
-          @click="$router.push(`/${$route.params.hash}/raw`)"
-        >
-          view raw
+      <div class="flex flex-wrap justify-start px-2 md:px-4 md:pb-2">
+        <!-- paste language -->
+        <!-- <languages-dropdown @update:language="language = $event" /> -->
+        <p class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 rounded-md shadow-sm">
+          {{ paste.language || 'language unknown' }}
+        </p>
+
+        <!-- view raw -->
+        <button class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none">
+          <a :href="`/${$route.params.hash}/raw`">view raw</a>
         </button>
       </div>
 
@@ -57,7 +61,8 @@
           :code="paste.content"
           readonly
           line-numbers
-          language="js"
+          :language="language"
+          class="custom-scrollbar"
         />
       </client-only>
     </div>
@@ -106,6 +111,7 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
+      language: 'html',
       loading: true,
       showErrorModal: false
     }
