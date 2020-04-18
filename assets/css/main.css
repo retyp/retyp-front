@@ -12,17 +12,20 @@
 /* ============================================================== */
 /* == Custom scrollbar ========================================== */
 /* ============================================================== */
-::-webkit-scrollbar {
+.custom-scrollbar::-webkit-scrollbar,
+.prism-editor__code::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar-track {
-  margin-right: 6px;
-  margin-bottom: 20px;
+.custom-scrollbar::-webkit-scrollbar-track,
+.prism-editor__code::-webkit-scrollbar-track {
+  margin-right: 2px;
+  margin-bottom: 10px;
   border-radius: 25px;
   background: #4A5568;
 }
-::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb,
+.prism-editor__code::-webkit-scrollbar-thumb {
   border-radius: 25px;
   background: #1A202C;
 }

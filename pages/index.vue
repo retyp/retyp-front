@@ -24,6 +24,7 @@
           :code.sync="paste.content"
           line-numbers
           language="js"
+          class="custom-scrollbar"
         />
       </client-only>
     </div>
