@@ -19,37 +19,49 @@
       | Paste options
       |--------------------------------------------------------------------------
       -->
-      <div class="flex flex-wrap justify-start px-2 md:px-4 md:pb-2">
-        <!-- paste language -->
-        <!-- <languages-dropdown @update:language="language = $event" /> -->
-        <div class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 rounded-md shadow-sm">
-          <loading-placeholder v-show="loading" class="h-5 w-16" light />
-          <div v-show="!loading">
-            <i class="fas fa-language mr-1" />
-            <span>{{ paste.language || 'language unknown' }}</span>
+      <div class="flex flex-wrap justify-between items-center px-2 md:px-4 md:pb-2">
+        <div class="flex flex-row text-gray-600 text-xs md:text-sm leading-5 font-medium mb-1">
+          <!-- paste language -->
+          <div class="mr-3">
+            <loading-placeholder v-show="loading" class="h-5 w-32" />
+            <div v-show="!loading">
+              <i class="fas fa-language mr-1" />
+              <span>language: {{ paste.language || 'unknown' }}</span>
+            </div>
+          </div>
+
+          <!-- paste size -->
+          <div class="">
+            <loading-placeholder v-show="loading" class="h-5 w-20" />
+            <div v-show="!loading">
+              <i class="fas fa-weight mr-1" />
+              <span>size: {{ paste.size ? formatBytes(paste.size) : '??' }}</span>
+            </div>
           </div>
         </div>
 
-        <!-- copy (clipboard) -->
-        <button
-          class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none"
-          @click="copyToClipboard()"
-        >
-          <loading-placeholder v-show="loading" class="h-5 w-16" light />
-          <div v-show="!loading">
-            <i class="fas fa-copy mr-1" />
-            <span>copy</span>
-          </div>
-        </button>
+        <div class="text-gray-100 text-xs md:text-sm leading-5 font-medium">
+          <!-- copy (clipboard) -->
+          <button
+            class="mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none"
+            @click="copyToClipboard()"
+          >
+            <loading-placeholder v-show="loading" class="h-5 w-16" light />
+            <div v-show="!loading">
+              <i class="fas fa-copy mr-1" />
+              <span>copy</span>
+            </div>
+          </button>
 
-        <!-- view raw -->
-        <button class="text-gray-100 text-xs md:text-sm leading-5 font-medium mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none">
-          <loading-placeholder v-show="loading" class="h-5 w-16" light />
-          <div v-show="!loading">
-            <i class="fas fa-file mr-1" />
-            <a :href="`/${$route.params.hash}/raw`">view raw</a>
-          </div>
-        </button>
+          <!-- view raw -->
+          <button class="mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none">
+            <loading-placeholder v-show="loading" class="h-5 w-16" light />
+            <div v-show="!loading">
+              <i class="fas fa-file mr-1" />
+              <a :href="`/${$route.params.hash}/raw`">view raw</a>
+            </div>
+          </button>
+        </div>
       </div>
 
       <!--
@@ -166,6 +178,17 @@ export default {
       }, function () {
         toast.error({ message: 'An error occured while copying paste content! ' })
       })
+    },
+    formatBytes (bytes, decimals = 2) {
+      if (bytes === 0) { return '0 bytes' }
+
+      const k = 1024
+      const dm = decimals < 0 ? 0 : decimals
+      const sizes = ['bytes', 'kb', 'mb', 'gb']
+
+      const i = Math.floor(Math.log(bytes) / Math.log(k))
+
+      return parseFloat((bytes / k ** i).toFixed(dm)) + ' ' + sizes[i]
     }
   }
 }
