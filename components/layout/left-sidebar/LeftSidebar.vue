@@ -92,6 +92,8 @@ export default {
       }
     },
     clonePaste () {
+      if (this.route !== 'hash') { return }
+
       this.$store.commit('paste/SET_CLONE')
       this.$toast.global.success({ message: 'Successfully cloned the paste.' })
       this.$router.push('/')
