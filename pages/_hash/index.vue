@@ -70,6 +70,15 @@
               <span @click="download()">download</span>
             </div>
           </button>
+
+          <!-- print -->
+          <button class="mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none">
+            <loading-placeholder v-show="loading" class="h-5 w-16" light />
+            <div v-show="!loading">
+              <i class="fas fa-print mr-1" />
+              <a :href="`/${$route.params.hash}/raw?print=true`" target="_blank">print</a>
+            </div>
+          </button>
         </div>
       </div>
 

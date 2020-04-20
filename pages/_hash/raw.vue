@@ -16,6 +16,12 @@ export default {
     this.$axios.get(`pastes/${this.$route.params.hash}/raw`)
       .then((res) => {
         this.$store.commit('paste/SET_PASTE', { content: res.data })
+
+        setTimeout(() => {
+          if (this.$route.query.print) {
+            window.print()
+          }
+        }, 250)
       })
   }
 }
