@@ -61,6 +61,15 @@
               <a :href="`/${$route.params.hash}/raw`">view raw</a>
             </div>
           </button>
+
+          <!-- download -->
+          <button class="mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none">
+            <loading-placeholder v-show="loading" class="h-5 w-16" light />
+            <div v-show="!loading">
+              <i class="fas fa-download mr-1" />
+              <span @click="download()">download</span>
+            </div>
+          </button>
         </div>
       </div>
 
@@ -188,6 +197,19 @@ export default {
       const i = Math.floor(Math.log(bytes) / Math.log(k))
 
       return parseFloat((bytes / k ** i).toFixed(dm)) + ' ' + sizes[i]
+    },
+    download () {
+      const blob = new Blob([this.paste.content], { type: 'text' })
+
+      const a = document.createElement('a')
+      a.download = `Paste ${this.paste.hash}`
+      a.href = URL.createObjectURL(blob)
+      a.dataset.downloadurl = ['text', a.download, a.href].join(':')
+      a.style.display = 'none'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      setTimeout(function () { URL.revokeObjectURL(a.href) }, 1500)
     }
   }
 }
