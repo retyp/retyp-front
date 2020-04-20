@@ -93,7 +93,7 @@
           :code="paste.content"
           readonly
           line-numbers
-          :language="language"
+          :language="paste.language || 'html'"
           class="custom-scrollbar"
         />
       </client-only>
@@ -143,7 +143,6 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      language: 'html',
       loading: true,
       showErrorModal: false
     }
