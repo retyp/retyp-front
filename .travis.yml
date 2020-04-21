@@ -19,6 +19,21 @@ jobs:
         - npm run lint
         - npm run test:e2e
 
+    # Build and push both current version & latest version
+    - stage: Build Docker image
+      if: branch = master
+      script:
+      - "PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')"
+      - echo "==============================================="
+      - echo "==== Building retyp/front:$PACKAGE_VERSION ===="
+      - echo "==============================================="
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build -t retyp/front .
+      - docker tag retyp/front retyp/front:latest
+      - docker tag retyp/front retyp/front:${PACKAGE_VERSION}
+      - docker push retyp/front:latest
+      - docker push retyp/front:${PACKAGE_VERSION}
+
 cache:
   directories:
     - node_modules
