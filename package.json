@@ -20,7 +20,7 @@
     "@nuxtjs/axios": "^5.10.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "@nuxtjs/tailwindcss": "^1.4.0",
+    "@nuxtjs/tailwindcss": "^1.4.1",
     "@nuxtjs/toast": "^3.3.0",
     "nuxt": "^2.12.2",
     "prismjs": "^1.20.0",
