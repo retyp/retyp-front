@@ -1,0 +1,55 @@
+/* ============================================================== */
+/* == Custom prismjs style ====================================== */
+/* ============================================================== */
+.prism-editor-wrapper,
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: #2D3748 !important
+}
+.prism-editor__line-numbers {
+  height: auto !important
+}
+
+/* ============================================================== */
+/* == Custom scrollbar ========================================== */
+/* ============================================================== */
+.custom-scrollbar::-webkit-scrollbar,
+.prism-editor__code::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track,
+.prism-editor__code::-webkit-scrollbar-track {
+  margin-right: 2px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  background: #4A5568;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb,
+.prism-editor__code::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background: #1A202C;
+}
+
+/* ============================================================== */
+/* == Custom transitions ======================================== */
+/* ============================================================== */
+
+/* Page transition */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .5s
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0
+}
+
+/* Layout transition */
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity .5s
+}
+.layout-enter, 
+layout-leave-active {
+  opacity: 0
+}
