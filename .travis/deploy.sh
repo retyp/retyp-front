@@ -15,5 +15,5 @@ ssh -o "StrictHostKeyChecking=no" $SSH_USER@$SSH_IP -p $SSH_PORT <<EOF
   docker-compose -f docker-compose.prod.yml rm -f retyp-front
   docker-compose -f docker-compose.prod.yml up -d --no-deps --build retyp-front
   
-  echo "Successfully deployed (${date + "%Y-%m-%d"})" >> /home/retyp/deployed.txt
+  echo "Successfully deployed!" >> /home/retyp/deployed.txt
 EOF
