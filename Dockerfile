@@ -12,3 +12,6 @@ RUN npm install
 
 # bundle all source code
 COPY . . 
+
+# Build (for production)
+RUN npm run build
