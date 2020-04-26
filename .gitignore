@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# SSH key used for deployment by travis
+deploy_rsa
+deploy_rsa.pub
