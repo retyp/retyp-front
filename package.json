@@ -35,7 +35,7 @@
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": "^0.5.2",
+    "eslint-plugin-nuxt": "^1.0.0",
     "husky": "^4.2.5",
     "jsdom": "^16.2.2",
     "require-extension-hooks": "^0.3.3",
