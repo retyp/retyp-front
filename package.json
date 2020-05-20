@@ -20,7 +20,7 @@
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "@nuxtjs/tailwindcss": "^1.4.1",
+    "@nuxtjs/tailwindcss": "^2.0.0",
     "@nuxtjs/toast": "^3.3.0",
     "nuxt": "^2.12.2",
     "prismjs": "^1.20.0",
@@ -29,19 +29,19 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "@nuxtjs/eslint-config": "^2.0.2",
-    "ava": "^3.8.1",
+    "ava": "^3.8.2",
     "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.1.0",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": "^0.5.2",
+    "eslint-plugin-nuxt": "^1.0.0",
     "husky": "^4.2.5",
     "jsdom": "^16.2.2",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^3.0.0",
-    "@nuxtjs/eslint-module": "^1.2.0"
+    "@nuxtjs/eslint-module": "^2.0.0"
   },
   "husky": {
     "hooks": {
