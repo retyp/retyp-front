@@ -3,7 +3,7 @@
   "description": "Retyp's front built with Nuxt & Tailwind CSS.",
   "author": "Arthur Dufour",
   "private": true,
-  "version": "0.1.5",
+  "version": "0.1.6",
   "keywords": [
     "retyp",
     "retyp-front"
