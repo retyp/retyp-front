@@ -19,6 +19,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/now-builder": "^0.17.2",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@nuxtjs/toast": "^3.3.0",
