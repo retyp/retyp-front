@@ -1,5 +1,5 @@
 export default function ({ app, $axios, error }) {
-  $axios.setBaseURL(process.env.BASE_URL)
+  $axios.setBaseURL(process.env.API_URL)
 
   $axios.onError((err) => {
     if (!err.response) {
