@@ -8,11 +8,11 @@
     }
   ],
   "env": {
-    "BASE_URL": "https://api.retyp.app"
+    "API_URL": "https://api.retyp.app"
   },
   "build": {
     "env": {
-      "BASE_URL": "https://api.retyp.app"
+      "API_URL": "https://api.retyp.app"
     }
   }
 }
