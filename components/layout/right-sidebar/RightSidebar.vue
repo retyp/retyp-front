@@ -34,6 +34,10 @@ export default {
   },
   mounted () {
     if (process.browser) {
+      if (window.innerWidth < 800) {
+        this.$store.dispatch('layout/toggleRightSidebar', false)
+      }
+
       window.onresize = () => {
         this.windowWidth = window.innerWidth
       }
