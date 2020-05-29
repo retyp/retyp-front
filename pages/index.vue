@@ -18,7 +18,7 @@
     | Paste content
     |--------------------------------------------------------------------------
     -->
-    <div class="px-2 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full">
+    <div class="px-1 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full text-sm md:text-base">
       <client-only>
         <prism-editor
           :code.sync="paste.content"

@@ -13,7 +13,7 @@
       :paste="paste"
     />
 
-    <div class="px-2 md:px-6 -mt-20 -mr-145 pt-24 pb-6 md:pb-16 h-full w-full">
+    <div class="px-1 md:px-6 -mt-20 -mr-145 pt-24 pb-6 md:pb-16 h-full w-full text-sm md:text-base">
       <!--
       |--------------------------------------------------------------------------
       | Paste options
