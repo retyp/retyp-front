@@ -16,10 +16,28 @@
 import { mapState } from 'vuex'
 
 export default {
+  data () {
+    return {
+      windowWidth: null
+    }
+  },
   computed: {
     ...mapState({
       open: state => state.layout.openRightSidebar
     })
+  },
+  watch: {
+    windowWidth (newVal, oldVal) {
+      if (newVal < 800 && oldVal >= 800) { this.$store.dispatch('layout/toggleRightSidebar', false) }
+      if (newVal >= 800 && oldVal < 800) { this.$store.dispatch('layout/toggleRightSidebar', true) }
+    }
+  },
+  mounted () {
+    if (process.browser) {
+      window.onresize = () => {
+        this.windowWidth = window.innerWidth
+      }
+    }
   }
 }
 </script>

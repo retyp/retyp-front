@@ -3,14 +3,14 @@ const state = () => ({
 })
 
 const mutations = {
-  TOGGLE_RIGHT_SIDEBAR: (state) => {
-    state.openRightSidebar = !state.openRightSidebar
+  TOGGLE_RIGHT_SIDEBAR: (state, open) => {
+    state.openRightSidebar = open || !state.openRightSidebar
   }
 }
 
 const actions = {
-  toggleRightSidebar: ({ commit }) => {
-    commit('TOGGLE_RIGHT_SIDEBAR')
+  toggleRightSidebar: ({ commit }, open) => {
+    commit('TOGGLE_RIGHT_SIDEBAR', open)
   }
 }
 
