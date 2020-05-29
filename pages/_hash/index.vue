@@ -41,15 +41,27 @@
         </div>
 
         <div class="text-gray-100 text-xs md:text-sm leading-5 font-medium">
-          <!-- copy (clipboard) -->
+          <!-- copy link (clipboard) -->
           <button
             class="mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none"
-            @click="copyToClipboard()"
+            @click="copyLinkToClipboard()"
           >
             <loading-placeholder v-show="loading" class="h-5 w-16" light />
             <div v-show="!loading">
               <i class="fas fa-copy mr-1" />
-              <span>copy</span>
+              <span>copy link</span>
+            </div>
+          </button>
+
+          <!-- copy content (clipboard) -->
+          <button
+            class="mr-2 px-2 md:px-3 py-px md:py-2 mb-1 bg-gray-600 hover:bg-gray-700 rounded-md shadow-sm transform duration-150 ease-in focus:outline-none"
+            @click="copyContentToClipboard()"
+          >
+            <loading-placeholder v-show="loading" class="h-5 w-16" light />
+            <div v-show="!loading">
+              <i class="fas fa-copy mr-1" />
+              <span>copy content</span>
             </div>
           </button>
 
@@ -186,12 +198,22 @@ export default {
     this.$store.commit('paste/RESET_PASTE')
   },
   methods: {
-    copyToClipboard () {
+    copyLinkToClipboard () {
+      if (!this.paste.content) { return }
+
+      const toast = this.$toast.global
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        toast.success({ message: 'Successfully copied paste link to clipboard! ' })
+      }, function () {
+        toast.error({ message: 'An error occured while copying paste link! ' })
+      })
+    },
+    copyContentToClipboard () {
       if (!this.paste.content) { return }
 
       const toast = this.$toast.global
       navigator.clipboard.writeText(this.paste.content).then(function () {
-        toast.success({ message: 'Successfully copied to clipboard! ' })
+        toast.success({ message: 'Successfully copied content to clipboard! ' })
       }, function () {
         toast.error({ message: 'An error occured while copying paste content! ' })
       })
