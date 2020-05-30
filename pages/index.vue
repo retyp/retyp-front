@@ -9,6 +9,7 @@
       show-save
       show-name-input
       show-toggle-right-sidebar
+      :is-saving="isSaving"
       :paste.sync="paste"
       @save-paste="savePaste"
     />
@@ -37,7 +38,8 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      paste: {}
+      paste: {},
+      isSaving: false
     }
   },
   computed: {
@@ -66,6 +68,7 @@ export default {
         return this.$toast.global.error({ message: 'Your paste cannot be empty.' })
       }
 
+      this.isSaving = true
       this.$axios.post('/pastes', this.paste)
         .then((res) => {
           this.$toast.global.success({ message: 'Paste successfully created!' })

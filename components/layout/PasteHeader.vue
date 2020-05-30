@@ -21,7 +21,8 @@
         fixed bottom-0 right-0 md:bottom-auto md:right-auto md:static px-3 py-1 mb-3 mr-3 md:mb-0 md:mr-0 focus:outline-none"
         @click="$emit('save-paste')"
       >
-        <i class="fas fa-save" />
+        <i v-show="!isSaving" class="fas fa-save" />
+        <i v-show="isSaving" class="fas fa-circle-notch fa-spin" />
       </button>
     </div>
 
@@ -84,6 +85,10 @@
 export default {
   props: {
     loading: {
+      type: Boolean,
+      default: false
+    },
+    isSaving: {
       type: Boolean,
       default: false
     },
