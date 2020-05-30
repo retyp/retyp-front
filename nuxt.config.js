@@ -35,7 +35,8 @@ export default {
     { src: '~/plugins/global-toasts', ssr: false },
     { src: '~/plugins/global-components.js', ssr: true },
     { src: '~/plugins/global-directives.js', ssr: true },
-    { src: '~/plugins/prism-editor.js', ssr: false }
+    { src: '~/plugins/prism-editor.js', ssr: false },
+    { src: '~/plugins/vue-shortkey.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
