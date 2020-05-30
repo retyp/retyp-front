@@ -1,5 +1,9 @@
 <template>
-  <div class="w-full h-screen bg-gray-800">
+  <div
+    v-shortkey.once="['n']"
+    class="w-full h-screen bg-gray-800"
+    @shortkey="$router.push('/')"
+  >
     <!--
     |--------------------------------------------------------------------------
     | Paste header
