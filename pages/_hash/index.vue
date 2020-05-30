@@ -20,7 +20,7 @@
       |--------------------------------------------------------------------------
       -->
       <div class="flex flex-wrap justify-between items-center px-2 md:px-4 md:pb-2">
-        <div class="flex flex-row text-gray-600 text-xs md:text-sm leading-5 font-medium mb-1">
+        <div class="flex flex-wrap text-gray-600 text-xs md:text-sm leading-5 font-medium mb-2">
           <!-- paste language -->
           <div class="mr-3">
             <loading-placeholder v-show="loading" class="h-5 w-32" />
@@ -31,11 +31,20 @@
           </div>
 
           <!-- paste size -->
-          <div class="">
+          <div :class="{ 'mr-3': paste.ttl }">
             <loading-placeholder v-show="loading" class="h-5 w-20" />
             <div v-show="!loading">
               <i class="fas fa-weight mr-1" />
               <span>size: {{ paste.size ? formatBytes(paste.size) : '??' }}</span>
+            </div>
+          </div>
+
+          <!-- paste ttl -->
+          <div>
+            <loading-placeholder v-show="loading" class="h-5 w-20" />
+            <div v-show="!loading">
+              <i class="fas fa-hourglass-half mr-1" />
+              <span>expires in: {{ $moment.duration(paste.ttl, 'seconds').humanize() }}</span>
             </div>
           </div>
         </div>
