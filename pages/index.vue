@@ -69,7 +69,7 @@ export default {
       }
 
       this.isSaving = true
-      this.$axios.post('/pastes', this.paste)
+      this.$axios.post('/pastes/temp', this.paste)
         .then((res) => {
           this.$toast.global.success({ message: 'Paste successfully created!' })
           this.$router.push(`/${res.data.hash}`)
