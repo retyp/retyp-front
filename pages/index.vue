@@ -1,5 +1,9 @@
 <template>
-  <div class="w-full h-screen bg-gray-800">
+  <div
+    v-shortkey.once="['ctrl', 's']"
+    class="w-full h-screen bg-gray-800"
+    @shortkey="savePaste()"
+  >
     <!--
     |--------------------------------------------------------------------------
     | Paste header
@@ -11,7 +15,7 @@
       show-toggle-right-sidebar
       :is-saving="isSaving"
       :paste.sync="paste"
-      @save-paste="savePaste"
+      @save-paste="savePaste()"
     />
 
     <!--
