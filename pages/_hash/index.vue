@@ -177,6 +177,56 @@
         </span>
       </div>
     </modal>
+
+    <!--
+    |--------------------------------------------------------------------------
+    | Share paste modal
+    |--------------------------------------------------------------------------
+    -->
+    <modal :showing="showSharePasteModal">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="sm:flex sm:items-start">
+          <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10">
+            <i class="fas fa-share-alt text-indigo-600" />
+          </div>
+
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <!-- title/description -->
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              Share paste
+            </h3>
+            <div class="mt-2">
+              <p class="text-sm leading-5 text-gray-500">
+                You can share this paste by sending this link to someone.
+              </p>
+            </div>
+
+            <!-- copy link -->
+            <div class="mt-3 flex flex-row w-100">
+              <p class="w-full px-2 py-2 bg-gray-200 text-gray-600 rounded-l-lg">
+                {{ pasteLink }}
+              </p>
+              <button
+                class="-ml-2 px-4 py-2 bg-indigo-600 text-gray-100 rounded-lg focus:outline-none hover:bg-indigo-500 transition ease-in-out duration-150"
+                @click="copyLinkToClipboard()"
+              >
+                <i class="fas fa-copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-100 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <span class="flex w-full rounded-md shadow-sm sm:mt-0 sm:w-auto">
+          <button
+            class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+            @click="$store.dispatch('layout/toggleShowSharePasteModal', false)"
+          >
+            Close
+          </button>
+        </span>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -192,8 +242,13 @@ export default {
   },
   computed: {
     ...mapState({
-      paste: state => state.paste.paste
-    })
+      paste: state => state.paste.paste,
+      showSharePasteModal: state => state.layout.showSharePasteModal
+    }),
+    pasteLink () {
+      if (!process.browser) { return }
+      return window.location.href
+    }
   },
   mounted () {
     this.$axios.get(`pastes/${this.$route.params.hash}`)
@@ -215,7 +270,7 @@ export default {
       if (!this.paste.content) { return }
 
       const toast = this.$toast.global
-      navigator.clipboard.writeText(window.location.href).then(function () {
+      navigator.clipboard.writeText(this.pasteLink).then(function () {
         toast.success({ message: 'Successfully copied paste link to clipboard! ' })
       }, function () {
         toast.error({ message: 'An error occured while copying paste link! ' })

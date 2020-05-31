@@ -56,6 +56,7 @@
             <left-sidebar-item
               icon="fa fa-share-alt"
               :class="{ 'cursor-not-allowed': route !== 'hash' }"
+              @click.native="sharePaste()"
             />
           </tooltip>
 
@@ -97,6 +98,11 @@ export default {
       this.$store.commit('paste/SET_CLONE')
       this.$toast.global.success({ message: 'Successfully cloned the paste.' })
       this.$router.push('/')
+    },
+    sharePaste () {
+      if (this.route !== 'hash') { return }
+
+      this.$store.dispatch('layout/toggleShowSharePasteModal')
     }
   }
 }
