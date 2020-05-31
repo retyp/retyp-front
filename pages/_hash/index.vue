@@ -44,7 +44,7 @@
           </div>
 
           <!-- paste ttl -->
-          <div>
+          <div v-if="paste.ttl">
             <loading-placeholder v-show="loading" class="h-5 w-20" />
             <div v-show="!loading">
               <i class="fas fa-hourglass-half mr-1" />
