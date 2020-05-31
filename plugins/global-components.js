@@ -16,6 +16,8 @@ import RightSidebarFooter from '@/components/layout/right-sidebar/RightSidebarFo
 import PasteHeader from '@/components/layout/PasteHeader'
 import LanguagesDropdown from '@/components/layout/LanguagesDropdown'
 
+import PreviewBanner from '@/components/layout/PreviewBanner'
+
 // Brand components
 Vue.component('SquareLogo', SquareLogo)
 
@@ -33,3 +35,5 @@ Vue.component('RightSidebarFooter', RightSidebarFooter)
 
 Vue.component('PasteHeader', PasteHeader)
 Vue.component('LanguagesDropdown', LanguagesDropdown)
+
+Vue.component('PreviewBanner', PreviewBanner)
