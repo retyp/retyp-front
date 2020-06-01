@@ -35,7 +35,8 @@ export default {
     { src: '~/plugins/global-toasts', ssr: false },
     { src: '~/plugins/global-components.js', ssr: true },
     { src: '~/plugins/global-directives.js', ssr: true },
-    { src: '~/plugins/prism-editor.js', ssr: false }
+    { src: '~/plugins/prism-editor.js', ssr: false },
+    { src: '~/plugins/vue-shortkey.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,7 +45,9 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // Doc:https://github.com/nuxt-community/moment-module
+    '@nuxtjs/moment'
   ],
   /*
   ** Nuxt.js modules
@@ -64,6 +67,12 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+  /*
+  ** Moment module configuration
+  ** See https://github.com/nuxt-community/moment-module
+  */
+  moment: {
   },
   /*
   ** Build configuration

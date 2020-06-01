@@ -1,5 +1,9 @@
 <template>
-  <div class="w-full h-screen bg-gray-800">
+  <div
+    v-shortkey.once="['ctrl', 's']"
+    class="w-full h-screen bg-gray-800"
+    @shortkey="savePaste()"
+  >
     <!--
     |--------------------------------------------------------------------------
     | Paste header
@@ -9,8 +13,9 @@
       show-save
       show-name-input
       show-toggle-right-sidebar
+      :is-saving="isSaving"
       :paste.sync="paste"
-      @save-paste="savePaste"
+      @save-paste="savePaste()"
     />
 
     <!--
@@ -18,7 +23,7 @@
     | Paste content
     |--------------------------------------------------------------------------
     -->
-    <div class="px-2 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full">
+    <div class="px-1 pb-2 md:px-6 -mt-20 -mr-145 pt-24 h-full w-full text-sm md:text-base">
       <client-only>
         <prism-editor
           :code.sync="paste.content"
@@ -37,7 +42,8 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      paste: {}
+      paste: {},
+      isSaving: false
     }
   },
   computed: {
@@ -66,12 +72,14 @@ export default {
         return this.$toast.global.error({ message: 'Your paste cannot be empty.' })
       }
 
-      this.$axios.post('/pastes', this.paste)
+      this.isSaving = true
+      this.$axios.post('/pastes/temp', this.paste)
         .then((res) => {
           this.$toast.global.success({ message: 'Paste successfully created!' })
           this.$router.push(`/${res.data.hash}`)
         })
         .catch((err) => {
+          this.isSaving = false
           this.$toast.global.error({ message: err.response.data.errors[0].detail })
         })
     }

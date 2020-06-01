@@ -26,6 +26,15 @@
       | - Show profile informations
       -->
     <right-sidebar />
+
+    <!--
+      |--------------------------------------------------------------------------
+      | Preview banner
+      |--------------------------------------------------------------------------
+      | Show to the user that the website is still under development
+      | (Can be closed (hide))
+      -->
+    <preview-banner />
   </div>
 </template>
 
