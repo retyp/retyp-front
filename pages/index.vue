@@ -79,6 +79,7 @@ export default {
           this.$router.push(`/${res.data.hash}`)
         })
         .catch((err) => {
+          this.isSaving = false
           this.$toast.global.error({ message: err.response.data.errors[0].detail })
         })
     }
