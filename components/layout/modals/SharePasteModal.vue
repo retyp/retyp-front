@@ -6,15 +6,39 @@
           <i class="fas fa-share-alt text-indigo-600" />
         </div>
 
-        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+        <div class="mt-3 text-center sm:mt-0 sm:ml-10 sm:text-left">
           <!-- title/description -->
-          <h3 class="text-lg leading-6 font-medium text-gray-900">
+          <h3 class="mb-1 text-lg leading-6 font-medium text-gray-900">
             Share paste
           </h3>
-          <div class="mt-2">
+          <div class="mb-5">
             <p class="text-sm leading-5 text-gray-500">
               You can share this paste by sending this link to someone.
             </p>
+          </div>
+
+          <!-- tweet button -->
+          <div class="mt-3 flex">
+            <a
+              class="w-full px-2 py-2 text-center text-gray-100 rounded-lg bg-blue-400 hover:bg-blue-300 focus:outline-none transition ease-in-out duration-150"
+              :href="`https://twitter.com/intent/tweet?text=${encodeURI(pasteLink)}`"
+              target="_blank"
+            >
+              <i class="fab fa-twitter pr-2" />
+              Tweet
+            </a>
+          </div>
+
+          <!-- send mail -->
+          <div class="mt-3 flex">
+            <a
+              class="w-full px-2 py-2 text-center text-gray-100 rounded-lg bg-blue-700 hover:bg-blue-600 focus:outline-none transition ease-in-out duration-150"
+              :href="`mailto:?body=${encodeURI(pasteLink)}`"
+              target="_blank"
+            >
+              <i class="fas fa-envelope pr-2" />
+              Send through mail
+            </a>
           </div>
 
           <!-- copy link -->
