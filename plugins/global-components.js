@@ -16,6 +16,9 @@ import RightSidebarFooter from '@/components/layout/right-sidebar/RightSidebarFo
 import PasteHeader from '@/components/layout/PasteHeader'
 import LanguagesDropdown from '@/components/layout/LanguagesDropdown'
 
+import SharePasteModal from '@/components/layout/modals/SharePasteModal'
+import PasteNotFoundModal from '@/components/layout/modals/PasteNotFoundModal'
+
 import PreviewBanner from '@/components/layout/PreviewBanner'
 
 // Brand components
@@ -35,5 +38,8 @@ Vue.component('RightSidebarFooter', RightSidebarFooter)
 
 Vue.component('PasteHeader', PasteHeader)
 Vue.component('LanguagesDropdown', LanguagesDropdown)
+
+Vue.component('SharePasteModal', SharePasteModal)
+Vue.component('PasteNotFoundModal', PasteNotFoundModal)
 
 Vue.component('PreviewBanner', PreviewBanner)
