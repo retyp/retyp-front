@@ -83,7 +83,7 @@
             <loading-placeholder v-show="loading" class="h-5 w-16" light />
             <div v-show="!loading">
               <i class="fas fa-file mr-1" />
-              <a :href="`/${$route.params.hash}/raw`">view raw</a>
+              <a :href="`${apiUrl}/pastes/${$route.params.hash}/raw`">view raw</a>
             </div>
           </button>
 
@@ -172,7 +172,8 @@ export default {
   data () {
     return {
       loading: true,
-      showErrorModal: false
+      showErrorModal: false,
+      apiUrl: process.env.API_URL
     }
   },
   computed: {
