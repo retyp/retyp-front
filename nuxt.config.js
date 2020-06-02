@@ -13,19 +13,22 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css' }
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Ubuntu&display=swap' }
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#5a67d8' },
   /*
   ** Global CSS
   */
   css: [
     '~/assets/css/main.css',
-    '~/assets/css/toasted.css'
+    '~/assets/css/prism.css',
+    '~/assets/css/toasted.css',
+    '~/assets/css/transitions.css'
   ],
   /*
   ** Plugins to load before mounting the App
