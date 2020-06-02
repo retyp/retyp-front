@@ -13,7 +13,6 @@
       show-save
       show-name-input
       show-toggle-right-sidebar
-      :is-saving="isSaving"
       :paste.sync="paste"
       @save-paste="savePaste()"
     />
@@ -33,6 +32,17 @@
         />
       </client-only>
     </div>
+
+    <!--
+    |--------------------------------------------------------------------------
+    | Save options modal
+    |--------------------------------------------------------------------------
+    -->
+    <save-options-modal
+      :showing="showSaveOptionsModal"
+      :paste="paste"
+      @close="showSaveOptionsModal = false"
+    />
   </div>
 </template>
 
@@ -43,7 +53,7 @@ export default {
   data () {
     return {
       paste: {},
-      isSaving: false
+      showSaveOptionsModal: false
     }
   },
   computed: {
@@ -53,9 +63,7 @@ export default {
   },
   watch: {
     clone (newVal, oldVal) {
-      if (!newVal) {
-        this.paste = {}
-      }
+      if (!newVal) { this.paste = {} }
     }
   },
   beforeMount () {
@@ -72,16 +80,7 @@ export default {
         return this.$toast.global.error({ message: 'Your paste cannot be empty.' })
       }
 
-      this.isSaving = true
-      this.$axios.post('/pastes/temp', this.paste)
-        .then((res) => {
-          this.$toast.global.success({ message: 'Paste successfully created!' })
-          this.$router.push(`/${res.data.hash}`)
-        })
-        .catch((err) => {
-          this.isSaving = false
-          this.$toast.global.error({ message: err.response.data.errors[0].detail })
-        })
+      this.showSaveOptionsModal = true
     }
   }
 }
