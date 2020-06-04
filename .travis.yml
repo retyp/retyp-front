@@ -18,6 +18,14 @@ jobs:
       script:
         - npm run lint
         - npm run test:e2e
+      after_success:
+        - wget https://raw.githubusercontent.com/retyp/travis-discord-webhook/master/send.sh
+        - chmod +x send.sh
+        - ./send.sh success $DISCORD_WEBHOOK_URL
+      after_failure:
+        - wget https://raw.githubusercontent.com/retyp/travis-discord-webhook/master/send.sh
+        - chmod +x send.sh
+        - ./send.sh failure $DISCORD_WEBHOOK_URL
 
 cache:
   directories:
