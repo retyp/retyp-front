@@ -74,7 +74,9 @@ export default {
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/toast
     '@nuxtjs/toast',
     // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    // Doc: https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots'
   ],
   /*
   ** Axios module configuration
@@ -107,6 +109,13 @@ export default {
     exclude: [
       '/admin/**'
     ]
+  },
+  /*
+  ** Robots module configuration
+  ** See https://github.com/nuxt-community/robots-module
+  */
+  robots: {
+    UserAgent: '*'
   },
   /*
   ** Build configuration
