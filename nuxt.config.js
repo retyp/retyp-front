@@ -14,7 +14,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@450&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap' }
     ]
   },
   /*
@@ -49,8 +49,10 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    // Doc:https://github.com/nuxt-community/moment-module
-    '@nuxtjs/moment'
+    // Doc: https://github.com/nuxt-community/moment-module
+    '@nuxtjs/moment',
+    // Doc: https://github.com/nuxt-community/pwa-module
+    '@nuxtjs/pwa'
   ],
   /*
   ** Nuxt.js modules
@@ -76,6 +78,16 @@ export default {
   ** See https://github.com/nuxt-community/moment-module
   */
   moment: {
+  },
+  /*
+  **
+  **
+  */
+  pwa: {
+    manifest: {
+      name: 'Retyp',
+      lang: 'en'
+    }
   },
   /*
   ** Build configuration
