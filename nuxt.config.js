@@ -72,7 +72,9 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/toast
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Axios module configuration
@@ -87,14 +89,24 @@ export default {
   moment: {
   },
   /*
-  **
-  **
+  ** PWA module configuration
   */
   pwa: {
     manifest: {
       name: 'Retyp',
       lang: 'en'
     }
+  },
+  /*
+  ** Sitemap module configuration
+  ** See https://www.npmjs.com/package/@nuxtjs/sitemap
+  */
+  sitemap: {
+    hostname: 'https://retyp.app',
+    gzip: true,
+    exclude: [
+      '/admin/**'
+    ]
   },
   /*
   ** Build configuration
