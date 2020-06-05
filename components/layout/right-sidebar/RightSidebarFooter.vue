@@ -5,6 +5,7 @@
       <a
         class="transition duration-300 hover:text-gray-500 font-extrabold"
         href="https://arthurdufour.com"
+        rel="noopener"
         target="_blank"
       >Arthur Dufour</a>
     </div>
@@ -13,6 +14,7 @@
         my-auto
         class="transition duration-300 hover:text-gray-500"
         href="https://github.com/retyp"
+        rel="noopener"
         target="_blank"
       >
         <span>v{{ version }}</span>
@@ -21,6 +23,7 @@
       <a
         class="transition duration-300 hover:text-gray-500 pl-3"
         href="https://github.com/retyp"
+        rel="noopener"
         target="_blank"
       >
         <i class="fab fa-github" />
@@ -28,6 +31,7 @@
       <a
         class="transition duration-300 hover:text-gray-500 pl-3"
         href="https://discord.gg/jx4rRZ3"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <i class="fab fa-discord" />

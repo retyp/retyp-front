@@ -83,7 +83,7 @@
             <loading-placeholder v-show="loading" class="h-5 w-16" light />
             <div v-show="!loading">
               <i class="fas fa-file mr-1" />
-              <a :href="`${apiUrl}/pastes/${$route.params.hash}/raw`">view raw</a>
+              <a :href="`${apiUrl}/pastes/${$route.params.hash}/raw`" rel="noopener">view raw</a>
             </div>
           </button>
 
@@ -101,7 +101,7 @@
             <loading-placeholder v-show="loading" class="h-5 w-16" light />
             <div v-show="!loading">
               <i class="fas fa-print mr-1" />
-              <a :href="`/${$route.params.hash}/raw?print=true`" target="_blank">print</a>
+              <a :href="`/${$route.params.hash}/raw?print=true`" rel="noopener" target="_blank">print</a>
             </div>
           </button>
         </div>

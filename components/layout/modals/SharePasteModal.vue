@@ -22,6 +22,7 @@
             <a
               class="w-full px-2 py-2 text-center text-gray-100 rounded-lg bg-blue-400 hover:bg-blue-300 focus:outline-none transition ease-in-out duration-150"
               :href="`https://twitter.com/intent/tweet?text=${encodeURI(pasteLink)}`"
+              rel="noopener"
               target="_blank"
             >
               <i class="fab fa-twitter pr-2" />
@@ -34,6 +35,7 @@
             <a
               class="w-full px-2 py-2 text-center text-gray-100 rounded-lg bg-blue-700 hover:bg-blue-600 focus:outline-none transition ease-in-out duration-150"
               :href="`mailto:?body=${encodeURI(pasteLink)}`"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <i class="fas fa-envelope pr-2" />
