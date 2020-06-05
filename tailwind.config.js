@@ -20,5 +20,14 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-  purge: false
+  purge: {
+    enabled: true,
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      'nuxt.config.js'
+    ]
+  }
 }
