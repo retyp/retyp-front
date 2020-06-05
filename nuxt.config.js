@@ -5,11 +5,18 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Retyp - Social Pastes',
+    title: 'Retyp - Easy Pastes',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'Retyp is a modern and user-friendly paste tool. Retyp is a website where you can store text or code online for a set period of time.' },
+      { hid: 'twitter:site', name: 'twitter:site', content: 'Retyp' },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: 'Retyp' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Retyp - Easy Pastes' },
+      { hid: 'twitter:description', name: 'twitter:description', content: 'Retyp is a modern and user-friendly paste tool. Retyp is a website where you can store text or code online for a set period of time.' },
+      { hid: 'og:site_name', name: 'og:site_name', content: 'Retyp' },
+      { hid: 'og:title', name: 'og:title', content: 'Retyp' },
+      { hid: 'og:description', name: 'og:description', content: 'Retyp is a modern and user-friendly paste tool. Retyp is a website where you can store text or code online for a set period of time.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
