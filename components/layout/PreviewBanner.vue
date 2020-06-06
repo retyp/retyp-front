@@ -27,7 +27,12 @@
             <!-- github button -->
             <div class="flex-shrink-0">
               <div class="rounded-md shadow-sm">
-                <a href="https://github.com/retyp" target="_blank" rel="noopen" class="flex items-center justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-lg text-indigo-600 bg-white hover:text-indigo-400 focus:outline-none focus:shadow-outline transition ease-in-out duration-150">
+                <a
+                  href="https://github.com/retyp"
+                  target="_blank"
+                  rel="noopener"
+                  class="flex items-center justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-lg text-indigo-600 bg-white hover:text-indigo-400 focus:outline-none focus:shadow-outline transition ease-in-out duration-150"
+                >
                   <i class="fab fa-github pr-2" />
                   Github
                 </a>
