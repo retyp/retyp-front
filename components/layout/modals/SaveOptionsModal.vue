@@ -170,11 +170,14 @@ export default {
         { label: 'Public', value: 'public' }
       ],
       expirations: [
+        { label: '10 minutes', value: 10 * 60 },
         { label: '1 hour', value: 1 * 3600 },
+        { label: '6 hours', value: 6 * 3600 },
         { label: '12 hours', value: 12 * 3600 },
         { label: '24 hours (default)', value: 24 * 3600 },
         { label: '2 days', value: 2 * 24 * 3600 },
         { label: '7 days', value: 7 * 24 * 3600 },
+        { label: '30 days', value: 30 * 24 * 3600 },
         { label: 'Never', value: 'never' }
       ]
     }
