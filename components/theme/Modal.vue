@@ -4,6 +4,7 @@
       v-if="showing"
       class="fixed bottom-0 inset-x-0 px-4 pb-4 sm:inset-0 sm:flex sm:items-center sm:justify-center z-50"
       @click.self="close"
+      @keydown.esc="close"
     >
       <!-- modal background -->
       <div class="fixed inset-0" @click="close()">

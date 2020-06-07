@@ -161,6 +161,7 @@
       :showing="showSharePasteModal"
       :paste-link="pasteLink"
       @copy-link="copyLinkToClipboard()"
+      @close="$store.dispatch('layout/toggleShowSharePasteModal', false)"
     />
   </div>
 </template>
