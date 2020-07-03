@@ -20,7 +20,7 @@
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/moment": "^1.6.1",
-    "@nuxtjs/now-builder": "^0.17.2",
+    "@nuxtjs/now-builder": "^0.17.3",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.3.2",
