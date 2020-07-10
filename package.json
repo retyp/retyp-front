@@ -42,7 +42,7 @@
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "husky": "^4.2.5",
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.3.0",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^3.0.0",
