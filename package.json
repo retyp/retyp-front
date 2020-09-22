@@ -23,7 +23,7 @@
     "@nuxtjs/now-builder": "^0.17.2",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/robots": "^2.4.2",
-    "@nuxtjs/sitemap": "^2.3.2",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@nuxtjs/toast": "^3.3.1",
     "nuxt": "^2.14.6",
