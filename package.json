@@ -26,7 +26,7 @@
     "@nuxtjs/sitemap": "^2.3.2",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@nuxtjs/toast": "^3.3.0",
-    "nuxt": "^2.13.0",
+    "nuxt": "^2.14.6",
     "prismjs": "^1.20.0",
     "vue-prism-editor": "^0.6.1",
     "vue-shortkey": "^3.1.7"
